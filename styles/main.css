@@ -61,6 +61,7 @@ nav a:hover {
     justify-content: flex-start;
     background-color: #cadeff;
     position: relative;
+    box-sizing: border-box;
 }
 
 #top-section .container {
@@ -73,8 +74,10 @@ nav a:hover {
 
 #top-section .intro {
     background: rgba(255, 255, 255, 0.8);
-    padding: 2em;
+    padding: 2em 2em; /* Adjust the padding to make the box wider */
     border-radius: 10px;
+    max-width: 800px; /* Set a maximum width for the box */
+    width: 100%; /* Make the box responsive */
 }
 
 #name {
