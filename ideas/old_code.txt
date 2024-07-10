@@ -1,0 +1,460 @@
+// !! OLD .JS and >CSS !!
+
+// Define canvas dimensions
+const width = window.innerWidth;
+const height = window.innerHeight;
+
+// Seeded random number generator function
+function seededRandom(seed) {
+    let x = Math.sin(seed++) * 10000;
+    return x - Math.floor(x);
+}
+
+// Initialize points in random positions
+const numPoints = 50;
+const seed = 15;
+const points = d3.range(numPoints).map((d, i) => {
+    if (i < numPoints * 0.7) { // 70% of the points on the right side
+        return {
+            x: (width / 2) + seededRandom(seed + i) * (width / 2),
+            y: seededRandom(seed + i + numPoints) * height,
+            vx: (Math.random() - 0.5) * 0.2,
+            vy: (Math.random() - 0.5) * 0.2
+        };
+    } else { // 30% of the points on the left side
+        return {
+            x: seededRandom(seed + i) * (width / 2),
+            y: seededRandom(seed + i + numPoints) * height,
+            vx: (Math.random() - 0.5) * 0.2,
+            vy: (Math.random() - 0.5) * 0.2
+        };
+    }
+});
+
+// Create a Delaunay triangulation from the points
+let delaunay = d3.Delaunay.from(points.map(d => [d.x, d.y]));
+
+// Set up the canvas
+const canvas = d3.select("canvas")
+    .attr("width", width)
+    .attr("height", height)
+    .style("background-color", "#f0f8ff") // Set background color to light blue/grey
+    .node();
+
+const context = canvas.getContext("2d");
+
+// Radius for the avoidance effect
+const avoidanceRadius = 100;
+
+// Function to draw the Delaunay triangulation
+function drawTriangles() {
+    // Clear the canvas
+    context.clearRect(0, 0, width, height);
+
+    // Draw the Delaunay triangulation
+    context.beginPath();
+    delaunay.render(context);
+    context.strokeStyle = "#ccc"; // Set line color to lighter grey
+    context.stroke();
+
+    // Draw the points as small circles
+    context.beginPath();
+    points.forEach(point => {
+        context.moveTo(point.x + 5, point.y);
+        context.arc(point.x, point.y, 5, 0, 2 * Math.PI); // Increase size to 5
+    });
+    context.fillStyle = "#7baedc"; // Set point color to more bluish
+    context.fill();
+}
+
+// Function to update the position of the points
+function updatePoints() {
+    points.forEach(point => {
+        point.x += point.vx;
+        point.y += point.vy;
+
+        // Reflect off the edges
+        if (point.x < 0 || point.x > width) point.vx *= -1;
+        if (point.y < 0 || point.y > height) point.vy *= -1;
+    });
+
+    // Update Delaunay triangulation
+    delaunay = d3.Delaunay.from(points.map(d => [d.x, d.y]));
+    drawTriangles();
+}
+
+// Handle mouse move to push points away
+canvas.addEventListener("mousemove", function(event) {
+    const [mx, my] = d3.pointer(event);
+
+    points.forEach(point => {
+        const dx = point.x - mx;
+        const dy = point.y - my;
+        const distance = Math.sqrt(dx * dx + dy * dy);
+
+        if (distance < avoidanceRadius) {
+            const angle = Math.atan2(dy, dx);
+            const pushDistance = avoidanceRadius - distance;
+            point.x += Math.cos(angle) * pushDistance * 0.1; // Adjust 0.1 to change the strength of the push
+            point.y += Math.sin(angle) * pushDistance * 0.1;
+        }
+    });
+
+    // Update Delaunay triangulation
+    delaunay = d3.Delaunay.from(points.map(d => [d.x, d.y]));
+    drawTriangles();
+});
+
+// Handle mouse click to add new points
+canvas.addEventListener("click", function(event) {
+    const [mx, my] = d3.pointer(event);
+    points.push({ x: mx, y: my, vx: (Math.random() - 0.5) * 0.2, vy: (Math.random() - 0.5) * 0.2 });
+    delaunay = d3.Delaunay.from(points.map(d => [d.x, d.y]));
+    drawTriangles();
+    console.log(`Point added at: ${mx}, ${my}`);
+});
+
+// Start the animation timer
+d3.timer(updatePoints);
+
+// Initial draw
+drawTriangles();
+
+// Prevent scrolling when interacting with the canvas
+let isInteracting = false;
+
+canvas.addEventListener('mousedown', () => {
+    isInteracting = true;
+});
+
+canvas.addEventListener('mouseup', () => {
+    isInteracting = false;
+});
+
+document.addEventListener('wheel', (event) => {
+    if (isInteracting) {
+        event.preventDefault();
+    }
+}, { passive: false });
+
+// Add tech logos to the Skills & Technologies section
+const techLogos = {
+    "Atlassian": "images/skills_and_technologies/main/atlassian.svg",
+    "Azure": "images/skills_and_technologies/main/azure.svg",
+    "Azure2": "images/skills_and_technologies/main/azure_2.svg",
+    "Confluence": "images/skills_and_technologies/main/confluence.svg",
+    "D3.js": "images/skills_and_technologies/main/d3js.svg",
+    "Data Factory": "images/skills_and_technologies/main/data_factory.svg",
+    "Excel": "images/skills_and_technologies/main/excel.svg",
+    "Fabric": "images/skills_and_technologies/main/fabric.svg",
+    "Figma": "images/skills_and_technologies/main/figma.svg",
+    "Flask": "images/skills_and_technologies/main/flask.svg",
+    "GitHub": "images/skills_and_technologies/main/github.svg",
+    "Hadoop": "images/skills_and_technologies/main/hadoop.svg",
+    "JetBrains Space": "images/skills_and_technologies/main/jetbrains_space.svg",
+    "Jira": "images/skills_and_technologies/main/jira.svg",
+    "Looker": "images/skills_and_technologies/main/looker.svg",
+    "Microsoft": "images/skills_and_technologies/main/microsoft.svg",
+    "MySQL1": "images/skills_and_technologies/main/mysql_1.svg",
+    "MySQL2": "images/skills_and_technologies/main/mysql_2.svg",
+    "Office": "images/skills_and_technologies/main/office.svg",
+    "OneDrive": "images/skills_and_technologies/main/onedrive.svg",
+    "OneLake": "images/skills_and_technologies/main/onelake.svg",
+    "Power Apps": "images/skills_and_technologies/main/power_apps.svg",
+    "Power Automate": "images/skills_and_technologies/main/power_automate.svg",
+    "Power Platform": "images/skills_and_technologies/main/power_platform.svg",
+    "PowerBI": "images/skills_and_technologies/main/powerbi.svg",
+    "PyCharm": "images/skills_and_technologies/main/pycharm.svg",
+    "Python": "images/skills_and_technologies/main/python.svg",
+    "RStudio": "images/skills_and_technologies/main/rstudio.svg",
+    "Tableau": "images/skills_and_technologies/main/tableau.svg",
+    "Teams": "images/skills_and_technologies/main/teams.svg",
+    "TensorFlow": "images/skills_and_technologies/main/tensorflow.svg",
+    "Twilio": "images/skills_and_technologies/main/twilio.svg",
+    "Visual Studio Code": "images/skills_and_technologies/main/visual_studio_code.svg",
+    "Zapier": "images/skills_and_technologies/main/zapier.svg",
+    "Zendesk": "images/skills_and_technologies/main/zendesk.svg"
+};
+
+const logosContainer = document.getElementById('tech-logos');
+Object.entries(techLogos).forEach(([name, path]) => {
+    const img = document.createElement('img');
+    img.src = path;
+    img.alt = name;
+    img.title = name; // Tooltip text
+    logosContainer.appendChild(img);
+});
+
+document.getElementById('contact-form').addEventListener('submit', function(event) {
+    event.preventDefault();  // Prevent the default form submission
+
+    var formData = new FormData(this);
+    fetch(this.action, {
+        method: 'POST',
+        body: formData,
+        headers: {
+            'Accept': 'application/json'
+        }
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.ok) {
+            alert('Thank you for your message!');
+            this.reset();  // Reset the form after successful submission
+        } else {
+            alert('Oops! There was a problem with your submission. Please try again.');
+        }
+    })
+    .catch(error => alert('Oops! There was a problem with your submission. Please try again.'));
+});
+
+document.querySelector('.scroll-down-link').addEventListener('click', function(e) {
+    e.preventDefault();
+    var targetId = this.getAttribute('href');
+    var targetSection = document.querySelector(targetId);
+    if (targetSection) {
+        targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+});
+
+// !! OLD MAIN.CSS !!
+/* GLOBAL STYLES */
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    background-color: #f0f8ff; /* Light blue/grey background */
+    color: #000;
+    font-family: 'Open Sans', sans-serif; /* Use Open Sans font */
+    font-size: 18px; /* Increase base font size */
+}
+
+/* NAVIGATION STYLES */
+nav {
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.8); /* Set background to semi-transparent white */
+    padding: 10px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    display: flex;
+    justify-content: flex-end; /* Move items to the right */
+    font-size: 20px; /* Increase font size for nav items */
+}
+
+nav ul {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+}
+
+/* LANDING SECTION STYLES */
+#landing-section {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Full viewport height */
+    overflow: hidden;
+    display: flex;
+    align-items: flex-start; /* Align items to the top */
+    justify-content: flex-start; /* Align content to the left */
+    padding-top: 10vh; /* Add padding to the top */
+}
+
+canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.container {
+    text-align: left; /* Left-align text */
+    padding: 20px; /* Add padding to the container */
+    position: relative;
+    z-index: 1;
+    max-width: 800px; /* Set a max width for the container */
+    margin-left: 5%; /* Add margin to the left */
+    font-size: 20px; /* Increase font size for container content */
+    margin-top: 5vh; /* Move the container up */
+}
+
+.intro {
+    background-color: rgba(255, 255, 255, 0.8); /* Set background to semi-transparent white */
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.container h1 {
+    font-size: 48px; /* Increase font size for heading */
+}
+
+.container p {
+    margin: 20px auto;
+    max-width: 600px; /* Set a max width for the text */
+    line-height: 1.6; /* Improve readability with line height */
+}
+
+/* Section styles */
+.section {
+    padding: 100px 20px;
+    text-align: left; /* Left-align text */
+    background-color: #fff; /* Default background color */
+    position: relative;
+    z-index: 1;
+    font-size: 20px; /* Increase font size for section content */
+}
+
+.section h2 {
+    font-size: 28px; /* Increase font size for section headings */
+}
+
+.section p {
+    font-size: 18px; /* Increase font size for section paragraphs */
+}
+
+#about-me, #skills-technologies, #portfolio, #contact {
+    padding-top: 60px; /* To account for the fixed nav bar */
+}
+
+/* Contact form styles */
+form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+label {
+    font-weight: bold;
+    display: block;
+    margin-top: 10px;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #800080; /* Purple background */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #4b0082; /* Darker purple on hover */
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth; /* Ensure smooth scrolling */
+}
+
+/* Tech logos styling */
+.tech-logos img {
+    width: 50px;
+    height: 50px;
+    margin: 10px;
+    transition: transform 0.5s ease; /* Smooth transition for wiggle effect */
+}
+
+.tech-logos img:hover {
+    transform: rotate(10deg); /* Wiggle effect on hover */
+}
+
+/* Projects Section Styles */
+.projects-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+.project {
+    width: 30%;
+    margin: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease-in-out;
+    background-color: #fff; /* Match section background for consistency */
+    border-radius: 8px; /* Rounded corners for modern appearance */
+}
+
+.project:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+.project-thumbnail {
+    width: 100%;
+    height: auto;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.project-info {
+    padding: 15px;
+    text-align: left;
+}
+
+.project-info h3 {
+    margin-top: 0;
+    color: #333;
+    font-size: 22px; /* Slightly larger for emphasis */
+}
+
+.project-info p {
+    font-size: 16px; /* Smaller than global text size for subtlety */
+    color: #666;
+    line-height: 1.6;
+}
+
+.details-link {
+    display: inline-block;
+    margin-top: 10px;
+    color: #0066cc;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    color: #007BFF; /* Adjust this color to the blue you prefer */
+}
+
+.arrow-container {
+    text-align: center; /* Center the arrow horizontally */
+    margin-top: 30px; /* Increase space above the arrow */
+}
+
+.down-arrow {
+    width: 60px; /* Maintain existing size */
+    height: 60px; /* Maintain existing size */
+    cursor: pointer; /* Indicates it's clickable */
+    transition: filter 0.3s ease-in-out; /* Smooth transition for hover effect */
+}
+
+.down-arrow:hover {
+    filter: brightness(0) saturate(100%) invert(15%) sepia(90%) saturate(4000%) hue-rotate(180deg) brightness(90%) contrast(90%);
+    /* Adjust this filter to achieve the blue color you desire */
+}

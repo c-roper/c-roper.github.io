@@ -1,0 +1,52 @@
+# Here is my plan for how to show/walkthrough the projects I have done:
+
+1. Explain the big picture. What was the problem trying to be solved and why is it important?
+
+2. Data used, methods, so on
+
+3. Visuals/results/so on
+
+4. Highlight your learning, reflections, and how it solved or met the companies needs.
+
+
+
+
+
+# Here I am just brainstorming some possible projects I have done that I could maybe include.
+## Here are the main ones I want to include in my project section so far
+1. AJ PowerBI dashboard. Have the project be for the Legal Clinic metric visability thing I did and then also share the leadership dashboards too.
+
+
+2. Clean Water Project (R Studio) Modeling/stats/governance/social impact
+
+
+3. 
+
+
+## Some other projects to consider adding in the future
+4. PUG Projects that I have done for courses
+
+
+5. Smart Home Dashboard (Home Assistant, Raspberry Pi)
+
+
+6. WLED Light Strip Project
+
+
+7. PowerBI Spotify
+
+
+8. Something with digital music production.
+
+
+9.  SMS Conversation Analytics with PowerBI
+- https://app.powerbi.com/groups/772d3335-c127-4723-9ebc-07e4ba04e1e3/reports/e6341e64-8c26-49b4-9c81-d89365a93978/ReportSection?experience=power-bi
+
+
+10.
+
+Addisonivy
+
+Remember:
+1. Check your Discover Bank account in the next 1 to 2 days for 2 small deposits of less than $1.00 each. They should be labeled as "JPMorgan Chase."
+2. Sign in to chase.com and verify those 2 amounts so we can activate your external account.
