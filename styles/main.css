@@ -1,238 +1,163 @@
 :root {
-    /* Define custom properties (variables) for consistent theme colors and padding */
     --primary-color: #800080; /* Purple */
     --text-color: #000; /* Black */
     --background-color: #f0f8ff; /* Light blue/grey */
     --light-background: rgba(255, 255, 255, 0.8); /* Semi-transparent white */
-    --section-padding: 20px 20px;
+    --section-padding: 20px;
 }
 
 body, html {
-    /* Reset default margins and paddings for the whole document */
     margin: 0;
     padding: 0;
-    /* Ensure body and html take full width and height */
     width: 100%;
     height: 100%;
-    /* Prevent horizontal scrolling */
     overflow-x: hidden;
-    /* Set background color and text color from variables */
     background-color: var(--background-color);
     color: var(--text-color);
-    /* Use a specific font and font size */
     font-family: 'Open Sans', sans-serif;
     font-size: 18px;
-    /* Smooth scrolling for anchor links */
     scroll-behavior: smooth;
 }
 
 nav {
-    /* Make navigation bar full width */
     width: 100%;
-    /* Light background color for the navigation bar */
     background-color: var(--light-background);
-    /* Add padding to top and bottom */
     padding: 10px 0;
-    /* Fix navigation bar at the top of the viewport */
     position: fixed;
     top: 0;
     left: 0;
-    /* Ensure it stays on top of other elements */
     z-index: 1000;
-    /* Align navigation items to the right */
     display: flex;
     justify-content: flex-end;
 }
 
 nav ul {
-    /* Use flexbox for horizontal alignment */
     display: flex;
-    /* Remove default list styling */
-    list-style-type: none;
-    /* Reset padding and margin */
+    list-style: none;
     padding: 0;
     margin: 0;
 }
 
 nav ul li {
-    /* Add space between list items */
     margin: 0 15px;
 }
 
 nav ul li a {
-    /* Remove default underline from links */
     text-decoration: none;
-    /* Set text color */
     color: var(--text-color);
-    /* Bold font weight for links */
     font-weight: bold;
 }
 
 nav ul li a:hover {
-    /* Change color on hover */
     color: #007BFF; /* Blue highlight on hover */
 }
 
 .section {
-    /* Apply padding from variable */
     padding: var(--section-padding);
-    /* Default white background for sections */
     background-color: #fff;
-    /* Ensure sections stack correctly */
     position: relative;
     z-index: 1;
-    /* Standard font size for sections */
     font-size: 20px;
 }
 
 #landing-section {
-    /* Set height to full viewport minus navigation bar height */
-    height: 100vh;
-    /* Center content vertically and horizontally */
+    height: calc(100vh - 40px); /* Full viewport height minus the height of the nav */
     display: flex;
     align-items: center;
-    justify-content: left;
-    /* Remove padding from landing section */
+    justify-content: flex-start; /* Align content to the left */
     padding: 0;
 }
 
 .container {
-    /* Left align text */
     text-align: left;
-    /* Add padding inside the container */
     padding: 20px;
-    /* Ensure container stacks above background */
     position: relative;
     z-index: 1;
-    /* Limit maximum width of the container */
     max-width: 800px;
-    /* Add margin on the left */
     margin-left: 5%;
-    /* Add vertical margin */
-    margin-top: 5vh;
-    /* Ensure consistent font size */
     font-size: 20px;
 }
 
 .intro {
-    /* Light background for intro section */
     background-color: var(--light-background);
-    /* Add padding inside the intro */
     padding: 20px;
-    /* Rounded corners for the intro box */
     border-radius: 10px;
 }
 
 .container h1 {
-    /* Larger font size for main title */
     font-size: 48px;
 }
 
 .container p {
-    /* Center text block horizontally */
     margin: 20px auto;
-    /* Limit width for readability */
     max-width: 600px;
-    /* Improve line height for readability */
     line-height: 1.6;
 }
 
 .projects-container {
-    /* Use flexbox for layout */
     display: flex;
     flex-wrap: wrap;
-    /* Space around project items */
     justify-content: space-around;
-    /* Add padding around the container */
     padding: 20px;
 }
 
 .project {
-    /* Set width of each project item */
     width: 30%;
-    /* Add margin around project items */
     margin: 20px;
-    /* Add shadow for depth effect */
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    /* White background for project items */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     background-color: #fff;
-    /* Rounded corners for project boxes */
     border-radius: 8px;
 }
 
 .project:hover {
-    /* Move project item up slightly on hover */
     transform: translateY(-5px);
-    /* Enhance shadow effect on hover */
-    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
 .project-thumbnail {
-    /* Full width for thumbnails */
     width: 100%;
-    /* Maintain aspect ratio */
     height: auto;
-    /* Rounded top corners */
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
 }
 
 .project-info {
-    /* Add padding inside project info */
     padding: 15px;
-    /* Left align text */
     text-align: left;
 }
 
 .project-info h3 {
-    /* Remove top margin for headings */
     margin-top: 0;
-    /* Darker color for headings */
     color: #333;
-    /* Slightly larger text for project headings */
     font-size: 22px;
 }
 
 .project-info p {
-    /* Standard font size for project descriptions */
     font-size: 16px;
-    /* Lighter color for less emphasis */
     color: #666;
-    /* Improve line height for readability */
     line-height: 1.6;
 }
 
 .details-link {
-    /* Display as inline block */
     display: inline-block;
-    /* Add margin above the link */
     margin-top: 10px;
-    /* Blue color for links */
     color: #0066cc;
-    /* Remove underline */
     text-decoration: none;
-    /* Bold font weight */
     font-weight: bold;
 }
 
 .arrow-container {
-    /* Center align arrow */
     text-align: center;
-    /* Add margin above the arrow */
     margin-top: 30px;
 }
 
 .down-arrow {
-    /* Set size of the down arrow */
     width: 60px;
     height: 60px;
-    /* Pointer cursor to indicate clickable */
     cursor: pointer;
-    /* Smooth transition for hover effect */
     transition: filter 0.3s ease-in-out;
 }
 
 .down-arrow:hover {
-    /* Complex filter to change color on hover */
     filter: brightness(0) saturate(100%) invert(15%) sepia(90%) saturate(4000%) hue-rotate(180deg) brightness(90%) contrast(90%);
 }
