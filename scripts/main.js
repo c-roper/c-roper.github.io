@@ -1,5 +1,3 @@
-// Main JavaScript File: Integrates both Delaunay functionality and form handling
-
 // Constants for canvas dimensions
 function setupCanvas() {
     const canvas = d3.select("canvas");
@@ -138,4 +136,3 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
-
