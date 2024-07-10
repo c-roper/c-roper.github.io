@@ -15,7 +15,7 @@ body, html {
     background-color: var(--background-color);
     color: var(--text-color);
     font-family: 'Open Sans', sans-serif;
-    font-size: 18px;
+    font-size: 20px;
     scroll-behavior: smooth;
 }
 
@@ -61,7 +61,7 @@ nav ul li a:hover {
 }
 
 #landing-section {
-    height: calc(100vh - 40px); /* Full viewport height minus the height of the nav */
+    height: 100vh; /* Full viewport height minus the height of the nav */
     display: flex;
     align-items: center;
     justify-content: flex-start; /* Align content to the left */
