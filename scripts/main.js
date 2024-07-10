@@ -1,3 +1,5 @@
+// Main JavaScript File: Integrates both Delaunay functionality and form handling
+
 // Constants for canvas dimensions
 function setupCanvas() {
     const canvas = d3.select("canvas");
@@ -106,6 +108,15 @@ function initialize() {
 
     animate();
 }
+
+// Reinitialize canvas and points on window resize
+window.addEventListener('resize', () => {
+    const { canvas, context, width, height } = setupCanvas();
+    const points = initializePoints(width, height);
+    let delaunay = createDelaunay(points);
+
+    setupInteractions(canvas, points, delaunay, context);
+});
 
 // Form handling functionality
 document.addEventListener('DOMContentLoaded', () => {
