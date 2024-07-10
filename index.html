@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Caleb Roper's personal portfolio showcasing projects and skills in data analytics and software development.">
+    <title>Caleb Roper Portfolio</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap">
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#about-me">About Me</a></li>
+                <li><a href="#skills-technologies">Skills & Technologies</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#certifications">Certifications</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <!-- LANDING SECTION -->
+        <section id="landing-section" class="section" style="background-color: #ffffff;">
+            <canvas></canvas>
+            <div class="container">
+                <div class="intro">
+                    <h1 id="name" style="color: black;">Hi, my name is Caleb!</h1>
+                    <p id="description">I'm a recent <strong>Data Analyst</strong> graduate from Lincolnshire, IL!</p>
+                    <div class="arrow-container">
+                        <a href="#about-me" class="scroll-down-link">
+                            <img src="images/skills_and_technologies/other/icons/down_arrow.svg" alt="Scroll Down" class="down-arrow">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ABOUT ME SECTION -->
+        <section id="about-me" class="section" style="background-color: #ffe4e1;">
+            <h2>About Me</h2>
+            <p>
+                I hold a B.S. in Data Analytics from Purdue University Global, where I achieved a near-perfect GPA of 3.95. My academic and professional journey has been marked by deep involvement in <strong>data wrangling, visualization, and model building</strong>.
+            </p>
+            <p>
+                In my professional capacity at Administer Justice, I spearheaded major data initiatives. I designed and implemented a <strong>scalable data pipeline</strong>, transformed unstructured data into actionable insights, and developed <strong>PowerBI dashboards</strong> that significantly enhanced decision-making for senior leadership and partners nationwide. This work not only streamlined reporting processes but also saved over 15 hours per week and bolstered customer engagement through an innovative <strong>automated communication strategy</strong>.
+            </p>
+            <p>
+                At Calvin University, I directed portfolio management strategies for a $2.8M student endowment fund, where I also mentored a team of analysts. My experiences have endowed me with robust technical skills in <strong>SQL, Python, and Azure Synapse Analytics</strong>.
+            </p>
+            <p>
+                I am passionate about leveraging data to drive actionable insights and am actively seeking new opportunities to make a meaningful impact. I'm excited about telling stories with data and contributing to projects that require thoughtful analysis and strategic acumen.
+            </p>
+        </section>
+
+        <!-- SKILLS & TECHNOLOGIES SECTION -->
+        <section id="skills-technologies" class="section" style="background-color: #d3ffce;">
+            <h2>Skills & Technologies</h2>
+            <p>
+                As a data analyst, I understand that tools and technologies are merely instruments to solve specific challenges. I am proficient in a diverse array of critical tools such as <strong>Python, SQL, and Tableau</strong>. More importantly, I select the right tool for each task, prioritizing efficiency and effectiveness over perfection. 
+            </p>
+            <p>
+                The landscape of technology is ever-evolving, and I stay at the forefront of this change by continuously learning and adapting to new tools as they emerge. My approach is solution-focused and results-driven, ensuring that I not only keep pace with technological advancements but also deliver substantial, measurable outcomes.
+            </p>
+            <div id="tech-logos" class="tech-logos">
+                <!-- Logos will be dynamically inserted here -->
+            </div>
+        </section>
+
+        <!-- PROJECTS SECTION -->
+        <section id="projects" class="section" style="background-color: #e6e6fa;">
+            <h2>Projects</h2>
+            <div class="projects-container">
+                <!-- Projects will be dynamically loaded here -->
+            </div>
+        </section>
+
+        <!-- CERTIFICATIONS SECTION -->
+        <section id="certifications" class="section" style="background-color: #e6faf7;">
+            <h2>Certifications</h2>
+            <ul>
+                <!-- Certifications will be dynamically loaded here -->
+            </ul>
+        </section>
+
+        <!-- CONTACT SECTION -->
+        <section id="contact" class="section">
+            <h2>Contact Me</h2>
+            <form id="contact-form" action="https://formspree.io/f/xjvnnobq" method="POST">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+        
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+        
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" required></textarea>
+        
+                <button type="submit">Send</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <!-- Footer content here -->
+    </footer>
+    <!-- Load D3.js from CDN -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <!-- Load the main JavaScript module -->
+    <script type="module" src="scripts/main.js"></script>
+</body>
+</html>

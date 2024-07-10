@@ -1,0 +1,173 @@
+:root {
+    --primary-color: #800080; /* Purple */
+    --text-color: #000; /* Black */
+    --background-color: #f0f8ff; /* Light blue/grey */
+    --light-background: rgba(255, 255, 255, 0.8); /* Semi-transparent white */
+    --section-padding: 100px 20px;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: 'Open Sans', sans-serif;
+    font-size: 18px;
+    scroll-behavior: smooth;
+}
+
+nav {
+    width: 100%;
+    background-color: var(--light-background);
+    padding: 10px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: flex-end;
+}
+
+nav ul {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    color: #007BFF; /* Blue highlight on hover */
+}
+
+.section {
+    padding: var(--section-padding);
+    background-color: #fff; /* Default background for sections */
+    position: relative;
+    z-index: 1;
+    font-size: 20px;
+}
+
+#landing-section {
+    height: 100vh; /* Full viewport height */
+    display: flex;
+    align-items: center; /* Center content vertically */
+    justify-content: center; /* Center content horizontally */
+}
+
+canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.container {
+    text-align: left;
+    padding: 20px;
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    margin-left: 5%; /* Maintain margin on the left for alignment */
+    margin-top: 5vh;
+    font-size: 20px; /* Consistent font size across sections */
+}
+
+.intro {
+    background-color: var(--light-background);
+    padding: 20px;
+    border-radius: 10px; /* Rounded corners for intro boxes */
+}
+
+.container h1 {
+    font-size: 48px; /* Larger text for main title */
+}
+
+.container p {
+    margin: 20px auto;
+    max-width: 600px; /* Max width for readability */
+    line-height: 1.6; /* Line height for better readability */
+}
+
+.projects-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+.project {
+    width: 30%;
+    margin: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    background-color: #fff;
+    border-radius: 8px; /* Rounded corners for project boxes */
+}
+
+.project:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15); /* Enhanced shadow on hover for effect */
+}
+
+.project-thumbnail {
+    width: 100%;
+    height: auto;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px; /* Rounded top corners for thumbnails */
+}
+
+.project-info {
+    padding: 15px;
+    text-align: left; /* Left align text inside project info */
+}
+
+.project-info h3 {
+    margin-top: 0; /* Remove top margin for heading consistency */
+    color: #333;
+    font-size: 22px; /* Slightly larger text for headings within projects */
+}
+
+.project-info p {
+    font-size: 16px;
+    color: #666; /* Lighter text color for less emphasis */
+    line-height: 1.6;
+}
+
+.details-link {
+    display: inline-block;
+    margin-top: 10px;
+    color: #0066cc;
+    text-decoration: none;
+    font-weight: bold; /* Bold text for links to provide emphasis */
+}
+
+.arrow-container {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.down-arrow {
+    width: 60px;
+    height: 60px;
+    cursor: pointer; /* Cursor pointer to indicate clickable */
+    transition: filter 0.3s ease-in-out; /* Smooth transition for hover effect */
+}
+
+.down-arrow:hover {
+    filter: brightness(0) saturate(100%) invert(15%) sepia(90%) saturate(4000%) hue-rotate(180deg) brightness(90%) contrast(90%);
+    /* A complex filter to change color on hover */
+}
