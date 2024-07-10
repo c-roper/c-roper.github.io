@@ -6,9 +6,10 @@ body, html {
     padding: 0;
     font-family: 'Open Sans', sans-serif;
     scroll-behavior: smooth;
-    overflow-x: hidden;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
+/* Header and Navigation Styles */
 header {
     position: fixed;
     top: 0;
@@ -52,8 +53,9 @@ nav a:hover {
     padding: 4em 2em;
 }
 
+/* Top Section Styles */
 #top-section {
-    height: 100vh;
+    height: 100vh; /* Full screen height */
     display: flex;
     align-items: center;
     justify-content: flex-start;
@@ -86,43 +88,19 @@ nav a:hover {
     font-size: 1.5em;
 }
 
+/* About Me Section Styles */
 #about-me {
     background-color: #ffe4e1;
 }
 
+/* Skills & Technologies Section Styles */
 #skills-technologies {
     background-color: #d3ffce;
 }
 
+/* Projects Section Styles */
 #projects {
     background-color: #e6e6fa;
-}
-
-#certifications {
-    background-color: #e6faf7;
-}
-
-#contact {
-    background-color: #f0f0f0;
-}
-
-h2 {
-    font-size: 2.5em;
-    margin-bottom: 0.5em;
-}
-
-p {
-    font-size: 1.2em;
-    line-height: 1.6;
-}
-
-ul {
-    list-style: none;
-    padding: 0;
-}
-
-ul li {
-    margin-bottom: 0.5em;
 }
 
 .projects-container {
@@ -145,6 +123,38 @@ ul li {
     border-radius: 10px;
 }
 
+/* Certifications Section Styles */
+#certifications {
+    background-color: #e6faf7;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    margin-bottom: 0.5em;
+}
+
+/* Contact Section Styles */
+#contact {
+    background-color: #f0f0f0;
+}
+
+/* General Heading Styles */
+h2 {
+    font-size: 2.5em;
+    margin-bottom: 0.5em;
+}
+
+/* General Paragraph Styles */
+p {
+    font-size: 1.2em;
+    line-height: 1.6;
+}
+
+/* Technology Logos Styles */
 #tech-logos {
     display: flex;
     flex-wrap: wrap;
@@ -158,6 +168,7 @@ ul li {
     height: 50px;
 }
 
+/* Footer Styles */
 footer {
     background: #333;
     color: #fff;
@@ -171,9 +182,9 @@ footer p {
 
 /* Hide scrollbar */
 body {
-    scrollbar-width: none;
+    scrollbar-width: none; /* Firefox */
 }
 
 body::-webkit-scrollbar {
-    display: none;
+    display: none; /* Chrome, Safari, Opera */
 }
