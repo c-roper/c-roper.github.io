@@ -161,3 +161,10 @@ nav ul li a:hover {
 .down-arrow:hover {
     filter: brightness(0) saturate(100%) invert(15%) sepia(90%) saturate(4000%) hue-rotate(180deg) brightness(90%) contrast(90%);
 }
+
+/* Hide navigation on mobile devices */
+@media (max-width: 768px) {
+    nav {
+        display: none;
+    }
+}
