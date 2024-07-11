@@ -1,6 +1,4 @@
-/* Main CSS File */
-
-/* General Styles */
+/* GENERAL STYLES */
 body, html {
     margin: 0;
     padding: 0;
@@ -9,7 +7,7 @@ body, html {
     overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
-/* Header and Navigation Styles */
+/* HEADER STYLES  */
 header {
     position: fixed;
     top: 0;
@@ -19,6 +17,7 @@ header {
     z-index: 1000;
 }
 
+/* NAVIGATION STYLES  */
 nav ul {
     list-style: none;
     display: flex;
@@ -48,12 +47,12 @@ nav a:hover {
     }
 }
 
-/* Section Styles */
+/* SECTION STYLES */
 .section {
     padding: 4em 2em;
 }
 
-/* Top Section Styles */
+/* TOP SECTION STYLES */
 #top-section {
     height: 100vh; /* Full screen height */
     display: flex;
@@ -91,12 +90,12 @@ nav a:hover {
     font-size: 1.5em;
 }
 
-/* About Me Section Styles */
+/* ABOUT ME SECTION STYLES */
 #about-me {
     background-color: #ffe4e1;
 }
 
-/* Skills & Technologies Section Styles */
+/* SKILLS & TECHNOLOGIES SECTION STYLES */
 #skills-technologies {
     background-color: #d3ffce;
 }
@@ -124,7 +123,7 @@ nav a:hover {
     50% { transform: rotate(5deg); }
 }
 
-/* Projects Section Styles */
+/* PROJECTS SECTION STYLES */
 #projects {
     background-color: #e6e6fa;
 }
@@ -176,7 +175,7 @@ nav a:hover {
     background-color: #0056b3;
 }
 
-/* Certifications Section Styles */
+/* Certifications SECTION STYLES */
 #certifications {
     background-color: #e6faf7;
 }
@@ -188,11 +187,6 @@ ul {
 
 ul li {
     margin-bottom: 0.5em;
-}
-
-/* Contact Section Styles */
-#contact {
-    background-color: #f0f0f0;
 }
 
 /* General Heading Styles */
@@ -221,7 +215,55 @@ p {
     height: 50px;
 }
 
-/* Footer Styles */
+/* CONTACT SECTION STYLES */
+#contact {
+    background-color: #f0f0f0;
+    padding: 2em;
+    text-align: left; /* Align text to the left */
+}
+
+#contact h2 {
+    color: #333;
+    margin-bottom: 1em;
+}
+
+.form-group {
+    margin-bottom: 20px; /* Space between form fields */
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group input, .form-group textarea {
+    width: 100%; /* Full width */
+    padding: 8px;
+    box-sizing: border-box; /* Include padding in width calculation */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.form-group textarea {
+    height: 100px; /* Larger text area for messages */
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* FOOTER STYLES */
 footer {
     background: #333;
     color: #fff;
@@ -233,11 +275,14 @@ footer p {
     margin: 0;
 }
 
-/* Hide scrollbar */
-body {
+/* Hide scrollbar: Universal selector to target all elements */
+* {
+    /* Hide scrollbar for IE, Edge, and Firefox */
+    -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none; /* Firefox */
-}
 
-body::-webkit-scrollbar {
-    display: none; /* Chrome, Safari, Opera */
+    /* Hide scrollbar for Chrome, Safari, and Opera */
+    ::-webkit-scrollbar {
+        display: none;
+    }
 }
