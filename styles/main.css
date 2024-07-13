@@ -53,41 +53,49 @@ nav a:hover {
 }
 
 /* TOP SECTION STYLES */
-#top-section {
-    height: 100vh; /* Full screen height */
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    background-color: #cadeff;
-    position: relative;
-    box-sizing: border-box;
-}
-
-#top-section .container {
+.container {
+    background-color: white;
+    border-radius: 15px;
+    padding: 2em;
+    text-align: center;
+    max-width: 800px;
     width: 100%;
-    max-width: 1200px;
-    margin: auto;
-    padding: 0 2em;
     box-sizing: border-box;
 }
 
-#top-section .intro {
-    background: rgba(255, 255, 255, 0.8);
-    padding: 2em 2em; /* Adjust the padding to make the box wider */
-    border-radius: 10px;
-    max-width: 800px; /* Set a maximum width for the box */
-    width: 100%; /* Make the box responsive */
+.intro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
 }
 
-#name {
-    margin: 0;
-    font-size: 3em;
-    color: #000;
+.social-icon {
+    fill: none;
+    stroke: black;
+    stroke-width: 1;
+    transition: fill 0.3s ease;
+    margin-right: 8px; /* Adjust spacing between icons */
+    width: 24px; /* Adjust icon size */
+    height: 24px; /* Adjust icon size */
 }
 
-#description {
-    margin-top: 0.5em;
-    font-size: 1.5em;
+.social-icon:hover {
+    fill: #0077b5; /* Change to your preferred hover color */
+}
+
+.scroll-arrow {
+    fill: none;
+    stroke: black;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    width: 32px; /* Adjust arrow size */
+    height: 32px; /* Adjust arrow size */
+}
+
+.scroll-arrow:hover {
+    transform: translateY(5px);
 }
 
 /* ABOUT ME SECTION STYLES */
