@@ -1,7 +1,17 @@
 /* GENERAL STYLES */
+:root {
+    --primary-color: #800080; /* Purple */
+    --text-color: #000; /* Black */
+    --background-color: #f0f8ff; /* Light blue/grey */
+    --light-background: rgba(255, 255, 255, 0.8); /* Semi-transparent white */
+    --section-padding: 100px 20px;
+}
+
 body, html {
     margin: 0;
     padding: 0;
+    width: 100%;
+    height: 100%;
     font-family: 'Open Sans', sans-serif;
     scroll-behavior: smooth;
     overflow-x: hidden; /* Prevent horizontal scrolling */
@@ -53,6 +63,13 @@ nav a:hover {
 }
 
 /* TOP SECTION STYLES */
+#top-section {
+    height: 100vh; /* Full viewport height */
+    display: flex;
+    align-items: center; /* Center content vertically */
+    justify-content: center; /* Center content horizontally */
+}
+
 .container {
     background-color: white;
     border-radius: 15px;
@@ -61,6 +78,7 @@ nav a:hover {
     max-width: 800px;
     width: 100%;
     box-sizing: border-box;
+    min-height: 100vh; /* New added line */
 }
 
 .intro {
