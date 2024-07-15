@@ -1,0 +1,169 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caleb Roper Portfolio</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+</head>
+<body id="page-top">
+    <!-- HEADER SECTION -->
+    <header>
+        <nav class="navbar navbar-expand-lg" id="mainNav">
+            <ul>
+                <li><a href="#about-me">About Me</a></li>
+                <li><a href="#skills-technologies">Skills & Technologies</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#certifications">Certifications</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="masthead">
+            <div class="intro-text">
+                <div class="intro-heading">Hi, my name is Caleb!</div>
+                <div class="intro-lead-in">I'm a recent Data Analyst graduate from Lincolnshire, IL!</div>
+                <!-- Social Icons (e.g., LinkedIn, GitHub, Twitter) -->
+            </div>
+        </div>
+    </header>
+        <!-- TOP SECTION -->
+        <section id="top-section" class="section" style="background-color: #8cb5f8;">
+            <div class="container">
+                <div class="intro">
+                    <h1 id="name" style="color: black;">Hi, my name is Caleb!</h1>
+                    <p id="description">I'm a recent <strong>Data Analyst</strong> graduate from Lincolnshire, IL!</p>
+                    <!-- Icons -->
+                    <div class="social-icons">
+                        <a href="https://www.linkedin.com/in/your-profile" target="_blank">
+                            <svg class="social-icon" viewBox="0 0 16 16" fill="#0A66C2">
+                                <path d="M12.225 12.225h-1.778V9.44c0-.664-.012-1.519-.925-1.519-.926 0-1.068.724-1.068 1.47v2.834H6.676V6.498h1.707v.783h.024c.348-.594.996-.95 1.684-.925 1.802 0 2.135 1.185 2.135 2.728l-.001 3.14zM4.67 5.715a1.037 1.037 0 01-1.032-1.031c0-.566.466-1.032 1.032-1.032.566 0 1.031.466 1.032 1.032 0 .566-.466 1.032-1.032 1.032zm.889 6.51h-1.78V6.498h1.78v5.727zM13.11 2H2.885A.88.88 0 002 2.866v10.268a.88.88 0 00.885.866h10.226a.882.882 0 00.889-.866V2.865a.88.88 0 00-.889-.864z"/>
+                            </svg>
+                        </a>
+                        <a href="https://github.com/your-username" target="_blank">
+                            <svg class="social-icon" viewBox="0 0 16 16" fill="#161514">
+                                <path fill-rule="evenodd" d="M8 1C4.133 1 1 4.13 1 7.993c0 3.09 2.006 5.71 4.787 6.635.35.064.478-.152.478-.337 0-.166-.006-.606-.01-1.19-1.947.423-2.357-.937-2.357-.937-.319-.808-.778-1.023-.778-1.023-.635-.434.048-.425.048-.425.703.05 1.073.72 1.073.72.624 1.07 1.638.76 2.037.582.063-.452.244-.76.444-.935-1.554-.176-3.188-.776-3.188-3.456 0-.763.273-1.388.72-1.876-.072-.177-.312-.888.07-1.85 0 0 .586-.189 1.924.716A6.711 6.711 0 018 4.381c.595.003 1.194.08 1.753.236 1.336-.905 1.923-.717 1.923-.717.382.963.142 1.674.07 1.85.448.49.72 1.114.72 1.877 0 2.686-1.638 3.278-3.197 3.45.251.216.475.643.475 1.296 0 .934-.009 1.688-.009 1.918 0 .187.127.404.482.336A6.996 6.996 0 0015 7.993 6.997 6.997 0 008 1z" clip-rule="evenodd"/>
+                            </svg>
+                        </a>
+                        <a href="https://twitter.com/your-username" target="_blank">
+                            <svg class="social-icon" viewBox="0 0 16 16" fill="#1D9BF0">
+                                <path d="M13.567 5.144c.008.123.008.247.008.371 0 3.796-2.889 8.173-8.172 8.173v-.002A8.131 8.131 0 011 12.398a5.768 5.768 0 004.25-1.19 2.876 2.876 0 01-2.683-1.995c.431.083.875.066 1.297-.05A2.873 2.873 0 011.56 6.348v-.036c.4.222.847.345 1.304.36a2.876 2.876 0 01-.89-3.836 8.152 8.152 0 005.92 3 2.874 2.874 0 014.895-2.619 5.763 5.763 0 001.824-.697 2.883 2.883 0 01-1.262 1.588A5.712 5.712 0 0015 3.656a5.834 5.834 0 01-1.433 1.488z"/>
+                            </svg>
+                        </a>
+                    </div>
+                    <!-- Scroll Down Arrow -->
+                    <div class="scroll-down">
+                        <a href="#about-me-section" class="scroll-link">
+                            <svg class="scroll-arrow" viewBox="0 0 50 50" fill="none">
+                                <path d="m25 45a14 14 0 0 0 14-14v-12a14 14 0 0 0 -28 0v12a14 14 0 0 0 14 14zm-12-26a12 12 0 0 1 24 0v12a12 12 0 0 1 -24 0z"/>
+                                <path d="m24 24.5h.09l.2.21a1 1 0 0 0 1.42 0l.2-.21h.09v-.09l5.71-5.7-1.42-1.42-4.29 4.3v-10.59h-2v10.59l-4.29-4.3-1.42 1.42 5.71 5.7z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- ABOUT ME SECTION -->
+        <section id="about-me" class="section" style="background-color: #ffe4e1;">
+            <h2>About Me</h2>
+            <p>
+                I hold a B.S. in Data Analytics from Purdue University Global, where I achieved a near-perfect GPA of 3.95. My academic and professional journey has been marked by deep involvement in <strong>data wrangling, visualization, and model building</strong>.
+            </p>
+            <p>
+                In my professional capacity at Administer Justice, I spearheaded major data initiatives. I designed and implemented a <strong>scalable data pipeline</strong>, transformed unstructured data into actionable insights, and developed <strong>PowerBI dashboards</strong> that significantly enhanced decision-making for senior leadership and partners nationwide. This work not only streamlined reporting processes but also saved over 15 hours per week and bolstered customer engagement through an innovative <strong>automated communication strategy</strong>.
+            </p>
+            <p>
+                At Calvin University, I directed portfolio management strategies for a $2.8M student endowment fund, where I also mentored a team of analysts. My experiences have endowed me with robust technical skills in <strong>SQL, Python, and Azure Synapse Analytics</strong>.
+            </p>
+            <p>
+                I am passionate about leveraging data to drive actionable insights and am actively seeking new opportunities to make a meaningful impact. I'm excited about telling stories with data and contributing to projects that require thoughtful analysis and strategic acumen.
+            </p>
+        </section>
+        <!-- SKILLS & TECHNOLOGIES SECTION -->
+        <section id="skills-technologies" class="section" style="background-color: #d3ffce;">
+            <h2>Skills & Technologies</h2>
+            <p>
+                As a data analyst, I understand that tools and technologies are merely instruments to solve specific challenges. I am proficient in a diverse array of critical tools such as <strong>Python, SQL, and Tableau</strong>. More importantly, I select the right tool for each task, prioritizing efficiency and effectiveness over perfection. 
+            </p>
+            <p>
+                The landscape of technology is ever-evolving, and I stay at the forefront of this change by continuously learning and adapting to new tools as they emerge. My approach is solution-focused and results-driven, ensuring that I not only keep pace with technological advancements but also deliver substantial, measurable outcomes.
+            </p>
+            <div id="tech-logos">
+                <img src="images\skills_and_technologies\main\powerbi.svg" alt="Python">
+                <img src="images\skills_and_technologies\main\excel.svg" alt="SQL">
+                <img src="images\skills_and_technologies\main\azure.svg" alt="Tableau">
+                <img src="images\skills_and_technologies\main\rstudio.svg" alt="Tableau">
+                <img src="images\skills_and_technologies\main\tableau.svg" alt="Tableau">
+                <img src="images\skills_and_technologies\main\visual_studio_code.svg" alt="Tableau">
+                <img src="images\skills_and_technologies\main\hadoop.svg" alt="Tableau">
+                <img src="images\skills_and_technologies\main\azure.svg" alt="Tableau">
+                <img src="images\skills_and_technologies\main\azure.svg" alt="Tableau">
+            </div>
+        </section>
+        <!-- PROJECTS SECTION -->
+        <section id="projects" class="section" style="background-color: #e6e6fa;">
+            <h2>Projects</h2>
+            <div class="projects-container">
+                <div class="project">
+                    <img src="images\projects\project_1\project_1_thumbnail.png" alt="Project 1">
+                    <h3>Project 1 Title</h3>
+                    <p>This project involves creating an advanced machine learning model to predict user behavior.</p>
+                    <a href="https://example.com/project1" target="_blank">View Project</a>
+                </div>
+                <div class="project">
+                    <img src="images\projects\project_2\project_2_thumbnail.png" alt="Project 2">
+                    <h3>Project 2 Title</h3>
+                    <p>For my senior year capstone project as a part of my Data Analytics bachelors program I used software installation data from Google to determine user retention and recomendations.</p>
+                    <a href="https://example.com/project2" target="_blank">View Project</a>
+                </div>
+                <div class="project">
+                    <img src="images\projects\project_3\project_3_thumbnail.png" alt="Project 3">
+                    <h3>Project 3 Title</h3>
+                    <p>This project showcases a data visualization dashboard for market analysis.</p>
+                    <a href="https://example.com/project3" target="_blank">View Project</a>
+                </div>
+            </div>
+        </section>
+        <!-- CERTIFICATIONS SECTION -->
+        <section id="certifications" class="section" style="background-color: #e6faf7;">
+            <h2>Certifications</h2>
+            <ul>
+                <li><a href="certifications\microsoft_build_and_operate_machine_learning_solutions_with_azure.pdf" target="_blank">Build and Operate Machine Learning Solutions with Azure</a></li>
+                <li><a href="certifications\microsoft_create_machine_learning_models_in_microsoft_azure.pdf" target="_blank">Create Machine Learning Models in Microsoft Azure</a></li>
+                <li><a href="certifications\google_foundations_of_data_science.pdf" target="_blank">Foundations of Data Science</a></li>
+                <li><a href="certifications\microsoft_create_machine_learning_models_in_microsoft_azure.pdf" target="_blank">Microsoft Azure Machine Learning for Data Scientists</a></li>
+                <li><a href="certifications\ibm_what_is_data_science.pdf" target="_blank">What is Data Science?</a></li>
+            </ul>
+        </section>
+        <!-- CONTACT SECTION -->
+        <section id="contact" class="section" style="background-color: #f0f0f0;">
+            <h2>Contact Me</h2>
+            <form id="contact-form" action="https://formspree.io/f/xjvnnobq" method="POST">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+                <button type="submit">Send</button>
+            </form>
+        </section>
+    </main>
+    <!-- FOOTER SECTION -->
+    <footer>
+        <!-- Footer content here -->
+    </footer>
+    <!-- Load the main JavaScript module -->
+    <script type="module" src="scripts/main.js"></script>
+    <!-- Load the particles module -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+</body>
+</html>
