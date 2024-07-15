@@ -97,31 +97,34 @@ nav a:hover {
     font-size: 2.5em; /* Increase the size of the "Hi, my name is Caleb" text */
 }
 
+.social-icons {
+    display: flex;
+    justify-content: center;
+    margin-top: 1em;
+}
+
 .social-icon {
     fill: none;
     stroke: black;
     stroke-width: 1;
-    transition: fill 0.3s ease;
-    margin-right: 8px; /* Adjust spacing between icons */
-    width: 24px; /* Adjust icon size */
-    height: 24px; /* Adjust icon size */
+    margin: 0 8px; /* Adjust spacing between icons */
+    width: 32px; /* Adjust icon size */
+    height: 32px; /* Adjust icon size */
 }
 
-.social-icon:hover {
-    fill: #0077b5; /* Change to your preferred hover color */
+.scroll-down {
+    position: absolute;
+    bottom: 20px; /* Position it towards the bottom */
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .scroll-arrow {
     fill: none;
     stroke: black;
-    transition: transform 0.3s ease;
     cursor: pointer;
     width: 32px; /* Adjust arrow size */
     height: 32px; /* Adjust arrow size */
-}
-
-.scroll-arrow:hover {
-    transform: translateY(5px);
 }
 
 /* ABOUT ME SECTION STYLES */
@@ -146,15 +149,6 @@ nav a:hover {
     width: 50px;
     height: 50px;
     transition: transform 0.2s; /* Smooth transition for transform effects */
-}
-
-#tech-logos img:hover {
-    animation: wiggle 0.5s infinite;
-}
-
-@keyframes wiggle {
-    0%, 100% { transform: rotate(-5deg); }
-    50% { transform: rotate(5deg); }
 }
 
 /* PROJECTS SECTION STYLES */
