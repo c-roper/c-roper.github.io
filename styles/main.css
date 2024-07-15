@@ -53,14 +53,36 @@ nav a:hover {
 }
 
 /* TOP SECTION STYLES */
+#top-section {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 0 2em; /* Add padding to ensure space on the sides */
+    z-index: 0; /* Ensure particles are behind the container */
+}
+
+#particles-js {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1; /* Ensure particles are behind the container */
+}
+
 .container {
     background-color: white;
     border-radius: 15px;
     padding: 2em;
     text-align: center;
-    max-width: 800px;
+    max-width: 700px; /* Decrease the max-width to make it less wide */
     width: 100%;
     box-sizing: border-box;
+    margin-top: 10vh; /* Move the box a bit closer to the navigation bar */
+    position: relative;
+    z-index: 10; /* Ensure the container is on top of the particles */
 }
 
 .intro {
@@ -69,6 +91,10 @@ nav a:hover {
     align-items: center;
     justify-content: center;
     height: 100%;
+}
+
+#name {
+    font-size: 2.5em; /* Increase the size of the "Hi, my name is Caleb" text */
 }
 
 .social-icon {
