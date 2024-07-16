@@ -1,3 +1,4 @@
+// Form handling functionality
 document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('contact-form').addEventListener('submit', function(event) {
         event.preventDefault();
@@ -150,4 +151,85 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
+    // Wiggle effect and tooltip for logos
+    document.querySelectorAll('.social-icon, #tech-logos img').forEach(icon => {
+        icon.addEventListener('mouseenter', () => {
+            icon.style.animation = 'wiggle 0.5s infinite';
+        });
+
+        icon.addEventListener('mouseleave', () => {
+            icon.style.animation = 'none';
+        });
+
+        icon.addEventListener('mouseover', () => {
+            const title = icon.getAttribute('title');
+            if (title) {
+                const tooltip = document.createElement('span');
+                tooltip.className = 'tooltip';
+                tooltip.innerText = title;
+                document.body.appendChild(tooltip);
+
+                const rect = icon.getBoundingClientRect();
+                tooltip.style.left = `${rect.left + (rect.width / 2) - (tooltip.offsetWidth / 2)}px`;
+                tooltip.style.top = `${rect.top - tooltip.offsetHeight - 5}px`;
+
+                icon._tooltip = tooltip;
+            }
+        });
+
+        icon.addEventListener('mouseout', () => {
+            if (icon._tooltip) {
+                document.body.removeChild(icon._tooltip);
+                icon._tooltip = null;
+            }
+        });
+    });
+
+    // Fade-in animations
+    const nameElement = document.getElementById('name');
+    const descriptionElement = document.getElementById('description');
+    const socialIcons = document.querySelector('.social-icons');
+
+    setTimeout(() => {
+        nameElement.classList.add('fade-in');
+    }, 500);
+
+    setTimeout(() => {
+        descriptionElement.classList.add('fade-in');
+    }, 1500);
+
+    setTimeout(() => {
+        socialIcons.classList.add('fade-in');
+    }, 2500);
 });
+
+// CSS keyframes for wiggle effect
+const style = document.createElement('style');
+style.innerHTML = `
+@keyframes wiggle {
+    0%, 100% { transform: rotate(-5deg); }
+    50% { transform: rotate(5deg); }
+}
+.tooltip {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 0.9em;
+    z-index: 10;
+    white-space: nowrap;
+}
+.fade-in {
+    opacity: 0;
+    animation: fadeIn ease 1.5s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+`;
+document.head.appendChild(style);

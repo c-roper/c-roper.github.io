@@ -5,6 +5,8 @@ body, html {
     font-family: 'Open Sans', sans-serif;
     scroll-behavior: smooth;
     overflow-x: hidden; /* Prevent horizontal scrolling */
+    background-color: #FFFFFF; /* Set the background color to white */
+    color: #333333; /* Set the text color to dark gray */
 }
 
 /* HEADER STYLES  */
@@ -12,7 +14,7 @@ header {
     position: fixed;
     top: 0;
     width: 100%;
-    background: rgba(255, 255, 255, 0.8);
+    background: rgba(255, 255, 255, 0.9);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     z-index: 1000;
 }
@@ -32,12 +34,12 @@ nav li {
 
 nav a {
     text-decoration: none;
-    color: #333;
+    color: #333333;
     font-weight: 700;
 }
 
 nav a:hover {
-    color: #007BFF;
+    color: #0A74DA;
 }
 
 /* Hide navigation bar on mobile */
@@ -60,6 +62,8 @@ nav a:hover {
     align-items: center;
     height: 100vh;
     padding: 0 2em; /* Add padding to ensure space on the sides */
+    background-color: #0A74DA; /* Set the background color to primary blue */
+    color: #FFFFFF; /* Set the text color to white */
     z-index: 0; /* Ensure particles are behind the container */
 }
 
@@ -73,7 +77,7 @@ nav a:hover {
 }
 
 .container {
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.9); /* Set the container background color to light gray */
     border-radius: 15px;
     padding: 2em;
     text-align: center;
@@ -83,6 +87,7 @@ nav a:hover {
     margin-top: 10vh; /* Move the box a bit closer to the navigation bar */
     position: relative;
     z-index: 10; /* Ensure the container is on top of the particles */
+    color: #333333; /* Set the text color to dark gray */
 }
 
 .intro {
@@ -121,7 +126,7 @@ nav a:hover {
 
 .scroll-arrow {
     fill: none;
-    stroke: black;
+    stroke: #FFFFFF; /* Set the scroll arrow color to white */
     cursor: pointer;
     width: 32px; /* Adjust arrow size */
     height: 32px; /* Adjust arrow size */
@@ -129,12 +134,12 @@ nav a:hover {
 
 /* ABOUT ME SECTION STYLES */
 #about-me {
-    background-color: #ffe4e1;
+    background-color: #F0F0F0; /* Set the background color to light gray */
 }
 
 /* SKILLS & TECHNOLOGIES SECTION STYLES */
 #skills-technologies {
-    background-color: #d3ffce;
+    background-color: #FFFFFF; /* Set the background color to white */
 }
 
 #tech-logos {
@@ -153,7 +158,7 @@ nav a:hover {
 
 /* PROJECTS SECTION STYLES */
 #projects {
-    background-color: #e6e6fa;
+    background-color: #F0F0F0; /* Set the background color to light gray */
 }
 
 .projects-container {
@@ -180,32 +185,32 @@ nav a:hover {
 
 .project h3 {
     font-size: 1.2em;
-    color: #333;
+    color: #333333; /* Set the text color to dark gray */
 }
 
 .project p {
     font-size: 1em;
-    color: #666;
+    color: #666666; /* Set the text color to a slightly lighter gray */
 }
 
 .project a {
     display: inline-block;
     margin-top: 10px;
     padding: 10px 15px;
-    background-color: #007BFF;
-    color: #ffffff;
+    background-color: #0A74DA; /* Set the button background color to primary blue */
+    color: #ffffff; /* Set the button text color to white */
     border-radius: 5px;
     text-decoration: none;
     transition: background-color 0.3s;
 }
 
 .project a:hover {
-    background-color: #0056b3;
+    background-color: #084b9f; /* Darken the button background color on hover */
 }
 
 /* Certifications SECTION STYLES */
 #certifications {
-    background-color: #e6faf7;
+    background-color: #FFFFFF; /* Set the background color to white */
 }
 
 ul {
@@ -229,29 +234,15 @@ p {
     line-height: 1.6;
 }
 
-/* Technology Logos Styles */
-#tech-logos {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-top: 2em;
-}
-
-#tech-logos img {
-    margin: 1em;
-    width: 50px;
-    height: 50px;
-}
-
 /* CONTACT SECTION STYLES */
 #contact {
-    background-color: #f0f0f0;
+    background-color: #F0F0F0; /* Set the background color to light gray */
     padding: 2em;
     text-align: left; /* Align text to the left */
 }
 
 #contact h2 {
-    color: #333;
+    color: #333333; /* Set the text color to dark gray */
     margin-bottom: 1em;
 }
 
@@ -279,7 +270,7 @@ p {
 
 button {
     padding: 10px 20px;
-    background-color: #007BFF;
+    background-color: #0A74DA; /* Set the button background color to primary blue */
     color: white;
     border: none;
     border-radius: 4px;
@@ -288,12 +279,12 @@ button {
 }
 
 button:hover {
-    background-color: #0056b3;
+    background-color: #084b9f; /* Darken the button background color on hover */
 }
 
 /* FOOTER STYLES */
 footer {
-    background: #333;
+    background: #333333; /* Set the footer background color to dark gray */
     color: #fff;
     text-align: center;
     padding: 1em 0;
