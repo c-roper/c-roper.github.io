@@ -305,3 +305,37 @@ footer p {
         display: none;
     }
 }
+
+.scroll-arrow {
+    width: 48px; /* Make the arrow bigger */
+    height: 48px; /* Make the arrow bigger */
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.scroll-arrow:hover {
+    transform: translateY(5px);
+}
+
+/* Define slide-in animation */
+@keyframes slideInFromBottom {
+    0% {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Apply the slide-in animation */
+.slide-in {
+    opacity: 0;
+    animation: slideInFromBottom 1.5s ease forwards;
+}
+
+/* Keep the hidden class for initial state */
+.hidden {
+    opacity: 0;
+}

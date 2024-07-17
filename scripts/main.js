@@ -1,30 +1,43 @@
-// Form handling functionality
 document.addEventListener('DOMContentLoaded', () => {
-    document.getElementById('contact-form').addEventListener('submit', function(event) {
-        event.preventDefault();
-        var formData = new FormData(this);
+    // Scroll to the top of the page on load
+    window.scrollTo({ top: 0, behavior: 'smooth' });
 
-        fetch(this.action, {
-            method: 'POST',
-            body: formData,
-            headers: {
-                'Accept': 'application/json'
-            }
-        })
-        .then(response => response.json())
-        .then(data => {
-            if (data.ok) {
-                alert('Thank you for your message!');
-                this.reset();
-            } else {
-                alert('Oops! There was a problem with your submission. Please try again.');
-            }
-        })
-        .catch(error => {
-            console.error('Error:', error);
-            alert('Oops! There was a problem with your submission. Please try again.');
-        });
-    });
+    const nameElement = document.getElementById('name');
+    const descriptionElement = document.getElementById('description');
+    const socialIcons = document.querySelector('.social-icons');
+    const scrollArrow = document.querySelector('.scroll-arrow');
+
+    // Set initial hidden state
+    nameElement.classList.add('hidden');
+    descriptionElement.classList.add('hidden');
+    socialIcons.classList.add('hidden');
+    scrollArrow.classList.add('hidden');
+
+    // Add slide-in class after a delay to trigger the animation
+    setTimeout(() => {
+        nameElement.classList.add('slide-in');
+        nameElement.classList.remove('hidden');
+    }, 500);
+
+    setTimeout(() => {
+        descriptionElement.classList.add('slide-in');
+        descriptionElement.classList.remove('hidden');
+    }, 1500);
+
+    setTimeout(() => {
+        socialIcons.classList.add('slide-in');
+        socialIcons.classList.remove('hidden');
+    }, 2500);
+
+    // Gravity/ball drop effect for scroll arrow
+    scrollArrow.style.position = 'relative';
+    scrollArrow.style.top = '-150px';
+    scrollArrow.style.opacity = '0';
+    setTimeout(() => {
+        scrollArrow.style.transition = 'top 0.5s ease-out, opacity 0.5s ease-in';
+        scrollArrow.style.top = '0';
+        scrollArrow.style.opacity = '1';
+    }, 3500);
 
     // Particle.js initialization
     particlesJS('particles-js', {
@@ -185,23 +198,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
-
-    // Fade-in animations
-    const nameElement = document.getElementById('name');
-    const descriptionElement = document.getElementById('description');
-    const socialIcons = document.querySelector('.social-icons');
-
-    setTimeout(() => {
-        nameElement.classList.add('fade-in');
-    }, 500);
-
-    setTimeout(() => {
-        descriptionElement.classList.add('fade-in');
-    }, 1500);
-
-    setTimeout(() => {
-        socialIcons.classList.add('fade-in');
-    }, 2500);
 });
 
 // CSS keyframes for wiggle effect
