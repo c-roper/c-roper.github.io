@@ -198,6 +198,33 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
+    // Modal functionality
+    const modals = document.querySelectorAll('.modal');
+    const projectCards = document.querySelectorAll('.project');
+
+    projectCards.forEach(card => {
+        card.addEventListener('click', () => {
+            const project = card.getAttribute('data-project');
+            const modal = document.getElementById(`${project}-modal`);
+            if (modal) {
+                modal.style.display = 'block';
+            }
+        });
+    });
+
+    modals.forEach(modal => {
+        const closeBtn = modal.querySelector('.close');
+        closeBtn.addEventListener('click', () => {
+            modal.style.display = 'none';
+        });
+
+        window.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.style.display = 'none';
+            }
+        });
+    });
 });
 
 // CSS keyframes for wiggle effect
