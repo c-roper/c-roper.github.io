@@ -32,9 +32,9 @@ Here I am just brainstorming some possible pideas and/or changes I could make.
 8. add medium profile
 
 
-9.
+9. add more to s&t section (TensorFlow, PyTorch)
 
 
-10.
+10. Magna Cum Laude
 
 Built and standardized a robust data dictionary; codified best practices; developed reusable procedures, enhancing cross-team collaboration and reducing project lead time by 30%, resulting in a 20% boost in overall productivity 
