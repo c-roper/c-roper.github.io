@@ -32,8 +32,11 @@ Here I am just brainstorming some possible pideas and/or changes I could make.
 8. add medium profile
 
 
-9. add more to s&t section (TensorFlow, PyTorch)
-
+9. add more to s&t section for Skills
+- TensorFlow
+- PyTorch
+- Azure Data Lake Storage (ADLS)
+- OneLake
 
 10. Magna Cum Laude
 
