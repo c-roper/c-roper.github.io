@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caleb Roper Portfolio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+            overflow: hidden;
+            position: relative;
+        }
+        h1, p {
+            color: #333;
+            opacity: 0;
+            animation: fade-in 2s ease-in-out forwards;
+        }
+        h1 {
+            margin-bottom: 20px;
+            animation-delay: 0.5s;
+        }
+        p {
+            color: #666;
+            margin-bottom: 40px;
+            animation-delay: 1s;
+        }
+        @keyframes fade-in {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .loading-dots {
+            display: flex;
+            justify-content: space-between;
+            width: 50px;
+            opacity: 0;
+            animation: fade-in 2s ease-in-out forwards;
+            animation-delay: 1.5s;
+        }
+        .loading-dots div {
+            width: 10px;
+            height: 10px;
+            background-color: #333;
+            border-radius: 50%;
+            animation: loading-dots 1s infinite ease-in-out;
+        }
+        .loading-dots div:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+        .loading-dots div:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+
+        @keyframes loading-dots {
+            0%, 20% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.5); opacity: 0.5; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        .rocket-container {
+            position: absolute;
+            bottom: -50px;
+            z-index: -1; /* Moves the rocket behind the text */
+            animation: rocket-launch 6s infinite ease-in-out;
+        }
+        @keyframes rocket-launch {
+            0% {
+                bottom: -50px;
+                transform: translateX(-50px) rotate(-15deg);
+            }
+            50% {
+                bottom: 60%;
+                transform: translateX(50px) rotate(15deg);
+            }
+            100% {
+                bottom: 110%;
+                transform: translateX(-50px) rotate(-15deg);
+            }
+        }
+        .rocket {
+            width: 50px;
+            height: 100px;
+            background: linear-gradient(to top, #ff9800, #ff5722);
+            position: relative;
+            border-radius: 25px 25px 0 0;
+        }
+        .rocket:before {
+            content: '';
+            position: absolute;
+            bottom: -20px;
+            left: 50%;
+            width: 20px;
+            height: 20px;
+            background: #ff5722;
+            border-radius: 50%;
+            transform: translateX(-50%);
+        }
+        .rocket-window {
+            position: absolute;
+            top: 25px;
+            left: 50%;
+            width: 20px;
+            height: 20px;
+            background: #fff;
+            border-radius: 50%;
+            transform: translateX(-50%);
+            border: 3px solid #ff9800;
+        }
+    </style>
+</head>
+<body>
+    <h1>I'll be back soon!</h1>
+    <p>The site is currently under maintenance. Please check back later.</p>
+    <div class="loading-dots">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+
+    <div class="rocket-container">
+        <div class="rocket">
+            <div class="rocket-window"></div>
+        </div>
+    </div>
+</body>
+</html>
