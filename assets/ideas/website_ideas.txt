@@ -37,6 +37,11 @@ Here I am just brainstorming some possible pideas and/or changes I could make.
 - PyTorch
 - Azure Data Lake Storage (ADLS)
 - OneLake
+- Tabular Editor
+- Bravo
+- Insight360
+- Morningstar
+
 
 10. Magna Cum Laude
 
