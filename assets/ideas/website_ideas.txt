@@ -29,7 +29,7 @@ Here I am just brainstorming some possible pideas and/or changes I could make.
 7. add more certs (https://learn.microsoft.com/en-us/credentials/browse/?credential_types=certification)
 
 
-8. add medium profile
+8. add medium profile, fiverr profile, and upwork profile
 
 
 9. add more to s&t section for Skills
@@ -43,6 +43,10 @@ Here I am just brainstorming some possible pideas and/or changes I could make.
 - Morningstar
 
 
-10. Magna Cum Laude
+10. Improve the about me section
+- Magna Cum Laude
+- Built and standardized a robust data dictionary; codified best practices; developed reusable procedures, enhancing cross-team collaboration and reducing project lead time by 30%, resulting in a 20% boost in overall productivity 
 
-Built and standardized a robust data dictionary; codified best practices; developed reusable procedures, enhancing cross-team collaboration and reducing project lead time by 30%, resulting in a 20% boost in overall productivity 
+
+11. Add a my approach/philosophy section
+- Highlight the data science process
